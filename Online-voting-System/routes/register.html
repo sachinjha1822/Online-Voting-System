@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Registration</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        #headerSection {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+
+        #headerSection h1 {
+            margin-right: 7%;
+            font-size: 44px;
+            flex-grow: 1; /* Allow the h1 to grow to fill available space */
+        }
+
+        #headerSection img {
+            width: 100px; /* Adjust width of the logo */
+            height: auto;
+            margin-left: 0; /* Remove any left margin */
+        }
+
+
+        #bodySection {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        input[type="file"] {
+            margin-top: 10px;
+        
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="headerSection">
+        <img src="../Voter.png" alt="Voter Logo">
+        <h1>Online Voting System</h1>
+    </div>
+    <div id="bodySection">
+        <center><h2>Registration</h2></center>
+        <form action="../api/register.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Enter name" required>
+            <input type="number" name="mobile" placeholder="Enter mobile" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="password" name="cpassword" placeholder="Confirm Password" required>
+            <input type="text" name="address" placeholder="Address" required><br><br>
+            
+            <div>
+                <label for="photo">Upload Image:</label>
+                <input type="file" name="photo" id="photo" required>
+            </div>
+            <br>
+            <div>
+                <label for="role">Select your role:</label>
+                <select name="role" id="role">
+                    <option value="1">Voter</option>
+                    <option value="2">Group</option>
+                </select>
+            </div>
+        
+            <br>
+            <center><button type="submit">Register</button><br><br>
+                Already a user? <a href="../index.html">Login here</a>
+            </center>
+            
+        </form>
+    </div>
+</body>
+</html>
